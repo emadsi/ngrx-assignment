@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 @Component({
   selector: 'user-name',
   standalone: true,
-  imports: [CommonModule],  // for *ngIf
+  imports: [CommonModule],
   templateUrl: './user-name.component.html',
   styleUrls: ['./user-name.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

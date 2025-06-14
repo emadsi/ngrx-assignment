@@ -3,7 +3,6 @@
 <div class="user-form">
   <h3>{{ (selectedUserId$ | async) ? "Edit User" : "Add User" }}</h3>
   <form (ngSubmit)="onSubmit()">
-    <!-- ID only when adding -->
     <div *ngIf="!(selectedUserId$ | async)">
       <label for="user-id">ID:</label>
       <input
