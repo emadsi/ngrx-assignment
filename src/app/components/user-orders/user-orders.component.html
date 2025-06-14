@@ -1,0 +1,60 @@
+<!-- src/app/components/user-orders.component.html -->
+
+<div class="user-form">
+  <h3>{{ (selectedUserId$ | async) ? "Edit User" : "Add User" }}</h3>
+  <form (ngSubmit)="onSubmit()">
+    <!-- ID only when adding -->
+    <div *ngIf="!(selectedUserId$ | async)">
+      <label for="user-id">ID:</label>
+      <input
+        id="user-id"
+        type="number"
+        name="id"
+        [(ngModel)]="form.id"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="user-name">Name:</label>
+      <input
+        id="user-name"
+        type="text"
+        name="name"
+        [(ngModel)]="form.name"
+        required
+      />
+    </div>
+
+    <div class="form-buttons">
+      <button type="submit">
+        {{ (selectedUserId$ | async) ? "Update User" : "Add User" }}
+      </button>
+      <button
+        type="button"
+        (click)="onDelete()"
+        *ngIf="selectedUserId$ | async"
+      >
+        Delete User
+      </button>
+      <button
+        type="button"
+        (click)="clearForm()"
+        *ngIf="selectedUserId$ | async"
+      >
+        Clear
+      </button>
+    </div>
+  </form>
+</div>
+
+<hr />
+
+<div class="button-group">
+  <button *ngFor="let u of users$ | async" (click)="selectUser(u.id)">
+    {{ u.name }}
+  </button>
+</div>
+
+<user-name [userName]="(userData$ | async)?.name"></user-name>
+<user-total [total]="(userData$ | async)?.total"></user-total>

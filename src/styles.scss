@@ -1,0 +1,26 @@
+/* src/styles.scss */
+:root {
+    --primary-color:     #2e86de;
+    --primary-dark:      #1b4f72;
+    --secondary-color:   #a569bd;
+    --background-color:  #f4f6f8;
+    --surface-color:     #ffffff;
+    --text-color:        #2f3640;
+    --text-light:        #7f8fa6;
+    --radius:            0.5rem;
+    --spacing-unit:      1rem;
+    --transition-fast:   0.2s;
+}
+  
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+  

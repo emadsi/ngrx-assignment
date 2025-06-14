@@ -1,0 +1,4 @@
+<p *ngIf="userName; else none">Name: {{ userName }}</p>
+<ng-template #none>
+  <p>No user selected</p>
+</ng-template>
